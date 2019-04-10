@@ -15,15 +15,14 @@ class ViewController: UIViewController, DataSendDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    func userDidEnterData(data: String) {
-        receivingLabel.text = data
+    func userDidEnterData(data: NSString) {
+        receivingLabel.text = data as String
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSendingVC" {
-            let sendingVC: LastNameViewController = segue.destination as! LastNameViewController
-            sendingVC.delegate = self
+            let lastNameVC: LastNameViewController = segue.destination as! LastNameViewController
+            lastNameVC.delegate = self
         }
     }
 }
-

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol DataSendDelegate {
-    func userDidEnterData(data: String)
+    func userDidEnterData(data: NSString)
 }
 
 class LastNameViewController: UIViewController {
@@ -24,12 +24,10 @@ class LastNameViewController: UIViewController {
     
     @IBAction func btnSendMassage(_ sender: Any) {
         if (delegate != nil){
-            if (textFields.text != nil){
-                let data = textFields.text
-                delegate?.userDidEnterData(data: data!)
+            if let data: NSString = textFields.text as NSString?{
+                delegate?.userDidEnterData(data: data)
                 dismiss(animated: true, completion: nil)
             }
         }
     }
-
 }
