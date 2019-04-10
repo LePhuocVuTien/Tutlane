@@ -15,7 +15,7 @@ class ViewController: UIViewController, DataSendDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    func userDidEnterData(data: NSString) {
+    func userEnterData(data: NSString) {
         receivingLabel.text = data as String
     }
     

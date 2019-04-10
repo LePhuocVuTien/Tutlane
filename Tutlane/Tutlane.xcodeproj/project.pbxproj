@@ -7,20 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		049C5113225DD42700AE4647 /* AudioPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C5112225DD42700AE4647 /* AudioPlayerViewController.swift */; };
+		049C5136225DDDAB00AE4647 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049C5135225DDDAB00AE4647 /* AVFoundation.framework */; };
+		049C513A225DEF5D00AE4647 /* nhac.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 049C5139225DEF5D00AE4647 /* nhac.mp3 */; };
+		049C513C225DF9FC00AE4647 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 049C513B225DF9FC00AE4647 /* Assets.xcassets */; };
 		04C1E8CA225CAA31000856BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C1E8C9225CAA31000856BD /* AppDelegate.swift */; };
 		04C1E8CC225CAA31000856BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C1E8CB225CAA31000856BD /* ViewController.swift */; };
 		04C1E8CF225CAA31000856BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C1E8CD225CAA31000856BD /* Main.storyboard */; };
-		04C1E8D1225CAA32000856BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C1E8D0225CAA32000856BD /* Assets.xcassets */; };
 		04C1E8D4225CAA32000856BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C1E8D2225CAA32000856BD /* LaunchScreen.storyboard */; };
 		04C1E8DC225CAC86000856BD /* LastNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C1E8DB225CAC86000856BD /* LastNameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		049C5112225DD42700AE4647 /* AudioPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerViewController.swift; sourceTree = "<group>"; };
+		049C5135225DDDAB00AE4647 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		049C5139225DEF5D00AE4647 /* nhac.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = nhac.mp3; path = ../../../../../Desktop/nhac.mp3; sourceTree = "<group>"; };
+		049C513B225DF9FC00AE4647 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../MUSIC/MUSIC/Assets.xcassets; sourceTree = "<group>"; };
 		04C1E8C6225CAA31000856BD /* Tutlane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tutlane.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C1E8C9225CAA31000856BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04C1E8CB225CAA31000856BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		04C1E8CE225CAA31000856BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		04C1E8D0225CAA32000856BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04C1E8D3225CAA32000856BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04C1E8D5225CAA32000856BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04C1E8DB225CAC86000856BD /* LastNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastNameViewController.swift; sourceTree = "<group>"; };
@@ -31,17 +37,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				049C5136225DDDAB00AE4647 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		049C5134225DDDAB00AE4647 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				049C5135225DDDAB00AE4647 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		04C1E8BD225CAA31000856BD = {
 			isa = PBXGroup;
 			children = (
 				04C1E8C8225CAA31000856BD /* Tutlane */,
 				04C1E8C7225CAA31000856BD /* Products */,
+				049C5134225DDDAB00AE4647 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,12 +72,14 @@
 		04C1E8C8225CAA31000856BD /* Tutlane */ = {
 			isa = PBXGroup;
 			children = (
+				049C5112225DD42700AE4647 /* AudioPlayerViewController.swift */,
 				04C1E8C9225CAA31000856BD /* AppDelegate.swift */,
 				04C1E8DB225CAC86000856BD /* LastNameViewController.swift */,
 				04C1E8CB225CAA31000856BD /* ViewController.swift */,
 				04C1E8CD225CAA31000856BD /* Main.storyboard */,
-				04C1E8D0225CAA32000856BD /* Assets.xcassets */,
 				04C1E8D2225CAA32000856BD /* LaunchScreen.storyboard */,
+				049C5139225DEF5D00AE4647 /* nhac.mp3 */,
+				049C513B225DF9FC00AE4647 /* Assets.xcassets */,
 				04C1E8D5225CAA32000856BD /* Info.plist */,
 			);
 			path = Tutlane;
@@ -125,8 +143,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				049C513A225DEF5D00AE4647 /* nhac.mp3 in Resources */,
 				04C1E8D4225CAA32000856BD /* LaunchScreen.storyboard in Resources */,
-				04C1E8D1225CAA32000856BD /* Assets.xcassets in Resources */,
+				049C513C225DF9FC00AE4647 /* Assets.xcassets in Resources */,
 				04C1E8CF225CAA31000856BD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				049C5113225DD42700AE4647 /* AudioPlayerViewController.swift in Sources */,
 				04C1E8DC225CAC86000856BD /* LastNameViewController.swift in Sources */,
 				04C1E8CC225CAA31000856BD /* ViewController.swift in Sources */,
 				04C1E8CA225CAA31000856BD /* AppDelegate.swift in Sources */,
