@@ -30,7 +30,6 @@ class AudioPlayerViewController: UIViewController {
     
     @IBAction func btnPlay(_ sender: Any) {
         myAudioPlayer.play()
-        print(sender)
     }
     
     
