@@ -88,7 +88,7 @@
                                             <navigationItem title="IOS Audio Player" id="R6H-5W-5V4">
                                                 <barButtonItem key="leftBarButtonItem" style="plain" systemItem="edit" id="ySR-Hr-GeJ">
                                                     <connections>
-                                                        <action selector="btnBackMenu:" destination="Asq-Ve-5aq" id="0B9-Hp-9xc"/>
+                                                        <action selector="EditControls:" destination="G81-Q4-4a3" id="snd-QL-zEe"/>
                                                         <segue destination="BYZ-38-t0r" kind="show" identifier="Back" id="kKQ-xe-DSs"/>
                                                     </connections>
                                                 </barButtonItem>
@@ -100,8 +100,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button" image="play"/>
                                         <connections>
-                                            <action selector="btnPlay:" destination="G81-Q4-4a3" eventType="touchUpInside" id="0cZ-b6-nlk"/>
-                                            <action selector="play:" destination="G81-Q4-4a3" eventType="touchUpInside" id="xd8-1m-S69"/>
+                                            <action selector="btnPlay:" destination="G81-Q4-4a3" eventType="touchUpInside" id="Da2-NJ-aEG"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vx9-ZN-HCz">
@@ -121,11 +120,10 @@
                                         </connections>
                                     </button>
                                     <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="6Ar-BO-rV4">
-                                        <rect key="frame" x="28" y="670" width="361" height="30"/>
+                                        <rect key="frame" x="28" y="660" width="361" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
-                                            <action selector="myVolumeController:" destination="G81-Q4-4a3" eventType="valueChanged" id="PkO-EJ-Plh"/>
-                                            <action selector="volumeControl:" destination="G81-Q4-4a3" eventType="valueChanged" id="lfJ-VI-PFk"/>
+                                            <action selector="volumeControls:" destination="G81-Q4-4a3" eventType="valueChanged" id="MMw-eD-h3t"/>
                                         </connections>
                                     </slider>
                                 </subviews>
@@ -135,9 +133,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="0NN-qN-Sfo"/>
                     </view>
+                    <connections>
+                        <outlet property="volumeAudio" destination="6Ar-BO-rV4" id="iek-q0-oY7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bz0-Dn-iZS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Asq-Ve-5aq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="571.01449275362324" y="385.71428571428572"/>
         </scene>

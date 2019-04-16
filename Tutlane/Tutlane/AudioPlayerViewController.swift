@@ -12,26 +12,32 @@ import AVFoundation
 var myAudioPlayer = AVAudioPlayer()
 
 class AudioPlayerViewController: UIViewController {
-
     
-    @IBOutlet weak var myVolumeController: UISlider!
     
+   
+    @IBOutlet weak var volumeAudio: UISlider!
     
     @IBAction func btnStop(_ sender: Any) {
         myAudioPlayer.stop()
         myAudioPlayer.currentTime = 0
     }
     
-    @IBAction func volumeControl(_ sender: Any) {
-        myAudioPlayer.volume = myVolumeController.value
-    }
     
     @IBAction func btnPause(_ sender: Any) {
         myAudioPlayer.pause()
+        print ("currentTime of audio: \(String(myAudioPlayer.currentTime))")
     }
     
     @IBAction func btnPlay(_ sender: Any) {
-       // myAudioPlayer.play()
+        myAudioPlayer.play()
+        print(sender)
+    }
+    
+    
+    @IBAction func volumeControls(_ sender: Any) {
+        myAudioPlayer.volume = volumeAudio.value
+        print ("Volume of audio: \(String(myAudioPlayer.volume))")
+        
     }
     
     var myAudioPlayer = AVAudioPlayer()
@@ -40,10 +46,9 @@ class AudioPlayerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
-        let myFilePathString = Bundle.main.path(forResource: "nhac.mp3", ofType: nil)
+        let myFilePathString = Bundle.main.path(forResource: "music.mp3", ofType: nil, inDirectory: nil )
+        print ("URL: \(String(describing: myFilePathString))")
         
-        //let player = AVPlayer(url: Bundle.main.url(forResource: "nhac", withExtension: "mp3")!)
         if let myFilePathString = myFilePathString{
             let myFilePathURL = URL(fileURLWithPath: myFilePathString)
             do {
