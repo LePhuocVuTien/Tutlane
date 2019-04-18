@@ -41,8 +41,6 @@ class FilesManagerViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        print("hello")
-        // create a new cell if needed or reuse an old one
         let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
         cell.textLabel?.text = numberArray.object(at: indexPath.row) as? String

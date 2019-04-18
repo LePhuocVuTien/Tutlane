@@ -189,6 +189,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gRp-1F-kli">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="368"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2j-MU-9WS">
+                                <rect key="frame" x="35" y="646" width="330" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.85758718519999999" green="0.58458193120000002" blue="0.82798878369999995" alpha="0.39814319349999999" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Show Alert Manager"/>
+                                <connections>
+                                    <segue destination="YH7-3y-QgH" kind="show" id="Rag-HT-h0w"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -199,7 +214,56 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1849" y="433"/>
+            <point key="canvasLocation" x="-1849.2753623188407" y="432.58928571428572"/>
+        </scene>
+        <!--Alert View Controller-->
+        <scene sceneID="C99-X8-Yn8">
+            <objects>
+                <viewController id="YH7-3y-QgH" customClass="AlertViewController" customModule="Tutlane" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3NB-Ot-DGY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ewH-Ha-hml">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oUP-gv-GNl">
+                                        <rect key="frame" x="0.0" y="52" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <color key="barTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <textAttributes key="titleTextAttributes">
+                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </textAttributes>
+                                        <items>
+                                            <navigationItem title="Alert Manager" id="Qlj-fj-a1w">
+                                                <barButtonItem key="leftBarButtonItem" title="Back" style="plain" id="fs7-a9-nZd">
+                                                    <connections>
+                                                        <segue destination="BYZ-38-t0r" kind="show" id="9eP-TD-LBH"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hhe-eS-EmB">
+                                        <rect key="frame" x="35" y="290" width="344" height="467"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="faceg"/>
+                                        <connections>
+                                            <action selector="btnAlert:" destination="YH7-3y-QgH" eventType="touchUpInside" id="o1a-UN-0cs"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="jkB-O9-W91"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iXN-jD-gVW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1413.0434782608697" y="-291.29464285714283"/>
         </scene>
         <!--Audio Player View Controller-->
         <scene sceneID="zSf-sE-JOy">
@@ -314,11 +378,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="faceg" width="700" height="1050"/>
         <image name="pause" width="1280" height="1218"/>
         <image name="play" width="734" height="518"/>
         <image name="stop" width="450" height="470"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Pta-qb-CWs"/>
+        <segue reference="9eP-TD-LBH"/>
     </inferredMetricsTieBreakers>
 </document>
