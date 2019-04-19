@@ -11,7 +11,6 @@ let fileName: String = "text.txt"
 let folderName: String = "/folder"
 class FilesManagerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    
     @IBOutlet weak var actionTable: UITableView!
     var numberArray = NSMutableArray()
     var fileManager: FileManager?

@@ -12,11 +12,9 @@ class AlertViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
-
     @IBAction func btnAlert(_ sender: Any) {
         let alert = UIAlertController(title: "IOLINK", message: "You have touch her face!", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))

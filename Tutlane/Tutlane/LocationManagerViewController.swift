@@ -15,7 +15,6 @@ class LocationManagerViewController: UIViewController, CLLocationManagerDelegate
     @IBOutlet weak var longtitude: UILabel!
     @IBOutlet weak var addressAtHere: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var btnTagButton: UIButton!
     @IBOutlet weak var btnGetButton: UIButton!
     
     let locationManager = CLLocationManager()
@@ -31,11 +30,6 @@ class LocationManagerViewController: UIViewController, CLLocationManagerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
-        locationManager.delegate = self
-        
         // Do any additional setup after loading the view.
     }
 
@@ -44,12 +38,10 @@ class LocationManagerViewController: UIViewController, CLLocationManagerDelegate
         let authStatus = CLLocationManager.authorizationStatus()
         print (authStatus)
         if authStatus == .notDetermined {
-            print(".notDetermined")
             locationManager.requestWhenInUseAuthorization()
             return
         }
         if authStatus == .denied || authStatus == .restricted {
-            print(".denied or .restricted")
             showLocationServicesDeniedAlert()
             return
         }
@@ -136,6 +128,7 @@ class LocationManagerViewController: UIViewController, CLLocationManagerDelegate
     }
     
     func updateLabels() {
+        
         if let location = location {
             latitude.text = String(format: "%.8f", location.coordinate.latitude)
             longtitude.text = String(format: "%.8f", location.coordinate.longitude)
@@ -156,7 +149,6 @@ class LocationManagerViewController: UIViewController, CLLocationManagerDelegate
             latitude.text = ""
             longtitude.text = ""
             addressAtHere.text = ""
-            btnTagButton.isHidden = true
             let statusMassage: String
 
             if let error = lastLocationError {
@@ -194,19 +186,15 @@ class LocationManagerViewController: UIViewController, CLLocationManagerDelegate
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+
         let newLocation = locations.last
-        print("location : \(String(describing: location))")
-        print("newLocations \(newLocation!.timestamp.timeIntervalSinceNow)")
-        print("newLocations \(newLocation!.horizontalAccuracy)")
         if newLocation!.timestamp.timeIntervalSinceNow < -5 {
-            print("*** ERROR <5 ***")
             return
         }
         if newLocation!.horizontalAccuracy < 0 {
-            print("*** ERROR <0 ***")
             return
         }
-        var distance = CLLocationDistance(DBL_MAX)
+        var distance = CLLocationDistance(Double.greatestFiniteMagnitude)
         if let location = location {
             distance = (newLocation?.distance(from: location))!
         }
@@ -229,7 +217,7 @@ class LocationManagerViewController: UIViewController, CLLocationManagerDelegate
             geocoder?.reverseGeocodeLocation(newLocation!, completionHandler: {(placeMarks, error) in
                 self.lastGeocodingError = error as NSError?
                 if error == nil, let p = placeMarks, !p.isEmpty {
-                    self.placeMark = p.last
+                    self.placeMark = placeMarks?.last
                 }
                 else {
                     self.placeMark = nil
@@ -241,7 +229,6 @@ class LocationManagerViewController: UIViewController, CLLocationManagerDelegate
         else if distance < 1.0 {
             let timeInterval = newLocation?.timestamp.timeIntervalSince(location!.timestamp)
             if timeInterval! > 10 {
-                print("*** Force done!")
                 stopLocationManager()
                 updateLabels()
                 configureGetButton()

@@ -25,7 +25,6 @@ class AudioPlayerViewController: UIViewController {
     
     @IBAction func btnPause(_ sender: Any) {
         myAudioPlayer.pause()
-        print ("currentTime of audio: \(String(myAudioPlayer.currentTime))")
     }
     
     @IBAction func btnPlay(_ sender: Any) {
@@ -35,7 +34,6 @@ class AudioPlayerViewController: UIViewController {
     
     @IBAction func volumeControls(_ sender: Any) {
         myAudioPlayer.volume = volumeAudio.value
-        print ("Volume of audio: \(String(myAudioPlayer.volume))")
         
     }
     

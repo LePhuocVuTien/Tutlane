@@ -301,15 +301,6 @@
                                             <action selector="actionMyLocation:" destination="GvG-th-7By" eventType="touchUpInside" id="LNh-ON-8d4"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OPW-aQ-ilW">
-                                        <rect key="frame" x="20" y="371" width="189" height="61"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="tagButton"/>
-                                        <connections>
-                                            <action selector="actionTagButton:" destination="GvG-th-7By" eventType="touchUpInside" id="iLd-ag-Bxe"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -320,7 +311,6 @@
                     <connections>
                         <outlet property="addressAtHere" destination="al7-0s-nPL" id="Z1n-FP-Yia"/>
                         <outlet property="btnGetButton" destination="v0P-Ve-GQJ" id="zt0-gI-o4s"/>
-                        <outlet property="btnTagButton" destination="OPW-aQ-ilW" id="4Ox-ea-Hb4"/>
                         <outlet property="latitude" destination="BJO-Dy-gip" id="lgW-VC-xdY"/>
                         <outlet property="longtitude" destination="skf-i0-f6f" id="wel-yR-dQk"/>
                         <outlet property="messageLabel" destination="RU5-dm-FSh" id="KZT-Mj-N8T"/>

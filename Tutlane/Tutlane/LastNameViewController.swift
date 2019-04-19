@@ -25,7 +25,7 @@ class LastNameViewController: UIViewController {
     @IBAction func btnSendMassage(_ sender: Any) {
         if (delegate != nil){
             if let data: NSString = textFields.text as NSString?{
-                delegate?.userEnterData(data: data)
+                delegate!.userEnterData(data: data)
                 dismiss(animated: true, completion: nil)
             }
         }
